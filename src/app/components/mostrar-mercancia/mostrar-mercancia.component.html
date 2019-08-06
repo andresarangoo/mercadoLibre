@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Andres Arango: Api mercado libre</h1>
+    <div class="row mx-auto">
+        <div class="col-12">
+            <input type="text" #Search>
+            <button (click)="buscar(Search.value)">Buscar</button>
+            <div class="card-columns">
+                <div class="card" style="width: 18rem;" *ngFor="let product of products">
+                    <img class="card-img-top" [src]="product.thumbnail" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">{{product.title}}</h4>
+                        <p class="card-text">{{product.price | currency}}</p>
+                        <p>Vendedor ID: {{product.seller.id}}</p>
+                        <!-- <button (click)="verInfo()" target="_blank">Ver detalles</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
